@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.6.3'
+ruby '2.6.6'
 
 gem 'bootsnap', require: false
 gem 'devise'
@@ -22,7 +22,7 @@ gem 'pg_search', '~> 2.3.0'
 
 gem 'rails-i18n', '~> 5.1'
 
-gem 'rails-i18n', '~> 5.1'
+
 
 
 gem 'dotenv-rails', groups: [:development, :test]
