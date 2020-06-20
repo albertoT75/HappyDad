@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :kids
+  resources :rewards
+  resources :games, only: [:index, :show] do
+    resources :reservations, only: [:new, :create] do
+      patch :greenstarscounter
+      put :greenstarscounter
+    end
+
+  end
+  resources :reservations, only: [:update] do
+    resources :comments, only: :create
+  end
+  get 'dashboard', to: 'pages#dashboard', as: :dashboard
+
 end

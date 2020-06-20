@@ -1,0 +1,29 @@
+<% if user_signed_in? %>
+
+<% end %>
+
+<div class="card <%= 'card-index' if controller_name == 'games' && action_name == 'index' %>">
+  <% if game.photo.present? %>
+    <div class="card-img" style="background-image: url('<%= image_path game.photo, height: 300, width: 400, crop: :fill %>')"></div>
+  <% else %>
+    <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))"></div>
+  <%end%>
+  <div class="card-description">
+    <h2><%=game.name%></h2>
+
+
+    <p style="color: rgba(0,0,0,0.6);"><%= truncate(game.description, length: 100, separator: ' ') %></p>
+    <div class="d-flex justify-content-between">
+      <%=link_to "More details", game_path(game.id), class: "btn btn-secondary" %>
+
+      <!-- insertion from show -->
+
+
+
+      <!-- insertion from show -->
+
+
+
+    </div>
+  </div>
+</div>

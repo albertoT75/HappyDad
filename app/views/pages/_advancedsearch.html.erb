@@ -1,0 +1,29 @@
+<%= form_tag games_path, method: :get, class: "search-location mt-md-5" do %>
+
+      <div class="form-group">
+        <div class="form-field">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search by name of area of behaviour",
+            autocomplete: "off"
+            %>
+            <div class="d-flex filters">
+
+            <!-- old search by label tag -->
+
+            </div>
+            <button ><span class="ion-ios-search"><i class="fas fa-search"></i></span></button>
+
+            <% end %>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
