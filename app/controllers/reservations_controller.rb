@@ -27,8 +27,9 @@ class ReservationsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def greenstarscounter
+  def greenstarscounter(greenstars)
     @reservation = Reservation.find(params[:id])
+    coomment = reservation.comments
     authorize @reservation
     if @reservation.greenstarscounter?
       @reservation.green_stars += 1

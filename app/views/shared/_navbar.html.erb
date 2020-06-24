@@ -13,9 +13,7 @@
         <li class="nav-item <%= controller_name == "pages" && action_name == "dashboard" ? "active" : ""%>">
           <%= link_to "My Board", dashboard_path, class: "nav-link" %>
         </li>
-        <li class="nav-item <%= controller_name == "pages" && action_name == "messages" ? "active" : ""%>">
-          <%= link_to "", root_path, class: "nav-link" %>
-        </li>
+
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <%= image_tag "https://res.cloudinary.com/dsu1ribvb/image/upload/v1588075610/user_hau5oh.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
