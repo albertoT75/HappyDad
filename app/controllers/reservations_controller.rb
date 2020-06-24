@@ -33,10 +33,12 @@ class ReservationsController < ApplicationController
     @comment = reservation.comments
     @stars = @comment.stars
     authorize @reservation
-    if @stars?
-      @reservation.green_stars += @stars
-      @reservation.green_stars.save
-    end
+    @reservation.green_stars += @stars
+    @reservation.green_stars.save
+
+
+
+
     redirect_to dashboard_path
   end
 
@@ -45,7 +47,6 @@ class ReservationsController < ApplicationController
 
 
   def reservation_params
-    params.require(:reservation).permit(:kid_id, :green_stars, :yellow_stars, :red_stars,
-                   :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :greenstarscounter)
+    params.require(:reservation).permit(:kid_id, :green_stars, :yellow_stars, :red_stars)
   end
 end

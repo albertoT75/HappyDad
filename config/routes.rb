@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   resources :kids
   resources :rewards
   resources :games, only: [:index, :show] do
-    resources :reservations, only: [:new, :create] do
-      patch :greenstarscounter
-      put :greenstarscounter
+    resources :reservations, only: [:new, :create, :starscounter]
     end
 
-  end
+
+
+
   resources :reservations, only: [:update] do
     resources :comments, only: :create
   end
