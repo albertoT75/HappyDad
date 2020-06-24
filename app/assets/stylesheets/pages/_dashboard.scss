@@ -51,4 +51,19 @@
     color: white;
     border-color: #328ac5;
   }
+
+}
+
+.btn-addstar {
+  border: 0px, solid transparent;
+  padding: 0;
+  color: #328ac5;
+  font-size: 6px;
+
+  &:hover {
+
+    color: #ff4365;
+
+  }
+
 }

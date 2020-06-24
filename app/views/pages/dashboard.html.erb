@@ -44,9 +44,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to new_comment_path(current_user) do %>
-                      <span>Add star <i class="far fa-plus-square"></i></span>
-                    <% end %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
 
                  </div>
                 <% end %>
@@ -57,9 +55,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                   </div>
                 <% end %>
               </td>
@@ -68,9 +64,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                   </div>
                 <% end %>
               </td>
@@ -79,9 +73,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                    </div>
                 <% end %>
               </td>
@@ -90,9 +82,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                   </div>
                 <% end %>
               </td>
@@ -101,9 +91,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                    </div>
                 <% end %>
               </td>
@@ -112,9 +100,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                    </div>
                 <% end %>
               </td>
@@ -205,3 +191,6 @@
   </div>
 </div>
 <%= render "shared/footer", game: @game %>
+
+
+
