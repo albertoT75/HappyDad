@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
 
   def create
-    @reservation = Reservation.find(params[:reservation_id])
+    @day = Day.find(params[:day_id])
+
     @comment = Comment.new(comment_params)
-    @comment.reservation = @reservation
+    @comment.day.reservation = @reservation
     @stars = @comment.rating
     authorize @comment
     if @comment.save

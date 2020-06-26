@@ -44,7 +44,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%=  %>
+                    <%= reservation.days.monday.stars %>
                     <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                  </div>
                 <% end %>
@@ -110,8 +110,8 @@
 
                   <div class="table-item">
                     You have
-                    <% if reservation.green_stars? %>
-                        <strong> <%= reservation.green_stars %> </strong>
+                    <% if reservation.stars? %>
+                        <strong> <%= reservation.stars %> </strong>
                     <% else %>
                       0
                     <% end %>

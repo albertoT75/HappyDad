@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  belongs_to :reservation
+  belongs_to :day
 
   validates :rating, inclusion: { in: 1..5 }
 

@@ -135,7 +135,7 @@
                   <hr class="kindergardens-line">
                 </div>
                 <div class="form-pink-bg">
-                <%= simple_form_for [@my_reservation.first, @comment] do |f| %>
+                <%= simple_form_for [@my_reservation.first, url: days_comments_path] do |f| %>
                  <%= f.input :rating, collection: 1..5 %>
                  <%= f.input :content %>
                  <%= f.submit class:"btn btn-white w-100"%>

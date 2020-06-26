@@ -31,10 +31,10 @@ class ReservationsController < ApplicationController
   def starscounter
     @reservation = Reservation.find(params[:id])
     @comment = reservation.comments
-    @stars = @comment.stars
+    @addedstars = @comment.stars
     authorize @reservation
-    @reservation.green_stars += @stars
-    @reservation.green_stars.save
+    @reservation.stars += @addedstars
+    @reservation.stars.save
 
 
 
@@ -47,6 +47,6 @@ class ReservationsController < ApplicationController
 
 
   def reservation_params
-    params.require(:reservation).permit(:kid_id, :green_stars, :yellow_stars, :red_stars)
+    params.require(:reservation).permit(:kid_id, :game_id, :status, :stars )
   end
 end

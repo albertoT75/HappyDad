@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_095219) do
+ActiveRecord::Schema.define(version: 2020_06_26_110305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,10 +18,24 @@ ActiveRecord::Schema.define(version: 2020_06_26_095219) do
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "reservation_id"
     t.text "content"
     t.integer "rating"
-    t.index ["reservation_id"], name: "index_comments_on_reservation_id"
+    t.bigint "day_id"
+    t.index ["day_id"], name: "index_comments_on_day_id"
+  end
+
+  create_table "days", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "reservation_id"
+    t.string "monday"
+    t.string "tuesday"
+    t.string "wednesday"
+    t.string "thursday"
+    t.string "friday"
+    t.string "saturday"
+    t.string "sunday"
+    t.index ["reservation_id"], name: "index_days_on_reservation_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -79,11 +93,6 @@ ActiveRecord::Schema.define(version: 2020_06_26_095219) do
     t.index ["user_id"], name: "index_rewards_on_user_id"
   end
 
-  create_table "stars", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -97,7 +106,8 @@ ActiveRecord::Schema.define(version: 2020_06_26_095219) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comments", "reservations"
+  add_foreign_key "comments", "days"
+  add_foreign_key "days", "reservations"
   add_foreign_key "kids", "users"
   add_foreign_key "reservations", "games"
   add_foreign_key "reservations", "kids"
