@@ -5,17 +5,17 @@ Rails.application.routes.draw do
   resources :rewards
   resources :games, only: [:index, :show] do
     resources :reservations, only: [:new, :create, :starscounter] do
-      resources :days, only: [:index, :show]
     end
   end
+
 
 
 
   resources :reservations, only: [:update] do
-    resources :days, only: [:index, :show] do
       resources :comments, only: :create
-    end
   end
+
+
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
 
 end

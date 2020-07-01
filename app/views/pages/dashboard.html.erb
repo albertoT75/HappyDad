@@ -44,7 +44,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= reservation.days.monday.stars %>
+
                     <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                  </div>
                 <% end %>
@@ -121,19 +121,7 @@
               </td>
 
 
-              <!-- <td class="table-dashboard">
-                <% kid.reservations.each do |reservation| %>
-                  <div class="table-item">
-                    <% if reservation.green_stars == 25 %>
-                        <% current_user.rewards.each do |reward| %>
-                          <%= link_to edit_reward_path(reward) do %>
-                            <%= reward.name %>
-                          <% end %>
-                        <% end %>
-                    <% end %>
-                  <% end %>
-              </td> -->
-                        <!-- link_to "Spin the Wheel!", "pages/wheel" -->
+
 
 
 
