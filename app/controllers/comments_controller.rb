@@ -1,11 +1,9 @@
 class CommentsController < ApplicationController
 
   def create
-    @day = Day.find(params[:day_id])
-
+    @reservation = Reservation.find(params[:reservation_id])
     @comment = Comment.new(comment_params)
-    @comment.day.reservation = @reservation
-    @stars = @comment.rating
+    @comment.reservation = @reservation
     authorize @comment
     if @comment.save
       redirect_to game_path(@reservation.game)
