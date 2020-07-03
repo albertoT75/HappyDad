@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_19_095624) do
+ActiveRecord::Schema.define(version: 2020_07_03_104559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2020_06_19_095624) do
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "reservation_id"
     t.text "content"
     t.integer "rating"
+    t.bigint "reservation_id"
     t.index ["reservation_id"], name: "index_comments_on_reservation_id"
   end
 
@@ -61,9 +61,14 @@ ActiveRecord::Schema.define(version: 2020_06_19_095624) do
     t.bigint "kid_id"
     t.bigint "game_id"
     t.string "status"
-    t.integer "green_stars"
-    t.integer "yellow_stars"
-    t.integer "red_stars"
+    t.integer "stars"
+    t.string "monday"
+    t.string "tuesday"
+    t.string "wednesday"
+    t.string "thursday"
+    t.string "friday"
+    t.string "saturday"
+    t.string "sunday"
     t.index ["game_id"], name: "index_reservations_on_game_id"
     t.index ["kid_id"], name: "index_reservations_on_kid_id"
   end

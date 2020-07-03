@@ -17,7 +17,7 @@
           <th class="table-dashboard" style="padding: 8px;">Fri</th>
           <th class="table-dashboard" style="padding: 8px;">Sat</th>
           <th class="table-dashboard" style="padding: 8px;">Sun</th>
-          <th class="table-dashboard" style="padding: 8px; color:black">Green Stars <i class="fas fa-star fa-lg" style="color:#57a773;"></i></th>
+          <th class="table-dashboard" style="padding: 8px; color:black">Stars <i class="fas fa-star fa-lg" style="color:yellow;"></i></th>
 
 
 
@@ -44,10 +44,8 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path%>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
 
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                  </div>
                 <% end %>
               </td>
@@ -57,9 +55,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                   </div>
                 <% end %>
               </td>
@@ -68,9 +64,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                   </div>
                 <% end %>
               </td>
@@ -79,9 +73,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                    </div>
                 <% end %>
               </td>
@@ -90,9 +82,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                   </div>
                 <% end %>
               </td>
@@ -101,9 +91,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                    </div>
                 <% end %>
               </td>
@@ -112,41 +100,28 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
 
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
-                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                    <%= link_to "Add Stars", game_path(reservation.game), class: "btn btn-addstar" %>
                    </div>
                 <% end %>
               </td>
 
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
+
                   <div class="table-item">
                     You have
-                    <% if reservation.green_stars? %>
-                        <strong> <%= reservation.green_stars %> </strong>
+                    <% if reservation.stars? %>
+                        <strong> <%= reservation.stars %> </strong>
                     <% else %>
                       0
                     <% end %>
-                    Green Stars
+                    Stars
                   </div>
                 <% end %>
               </td>
 
 
-              <!-- <td class="table-dashboard">
-                <% kid.reservations.each do |reservation| %>
-                  <div class="table-item">
-                    <% if reservation.green_stars == 3 %>
-                        <% current_user.rewards.each do |reward| %>
-                          <%= link_to edit_reward_path(reward) do %>
-                            <%= reward.name %>
-                          <% end %>
-                        <% end %>
-                    <% end %>
-                  <% end %>
-              </td> -->
-                        <!-- link_to "Spin the Wheel!", "pages/wheel" -->
+
 
 
 
@@ -205,3 +180,6 @@
   </div>
 </div>
 <%= render "shared/footer", game: @game %>
+
+
+

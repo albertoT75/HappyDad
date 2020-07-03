@@ -24,16 +24,21 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     authorize @reservation
     @reservation.update(updated_at: Time.now)
+    @reservation.starscounter
     redirect_to dashboard_path
   end
 
-  def greenstarscounter
+  def starscounter
     @reservation = Reservation.find(params[:id])
+    @comment = reservation.comments
+    @addedstars = @comment.stars
     authorize @reservation
-    if @reservation.greenstarscounter?
-      @reservation.green_stars += 1
-      @reservation.green_stars.save
-    end
+    @reservation.stars += @addedstars
+    @reservation.stars.save
+
+
+
+
     redirect_to dashboard_path
   end
 
@@ -42,7 +47,6 @@ class ReservationsController < ApplicationController
 
 
   def reservation_params
-    params.require(:reservation).permit(:kid_id, :green_stars, :yellow_stars, :red_stars,
-                   :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :greenstarscounter)
+    params.require(:reservation).permit(:kid_id, :game_id, :status, :stars )
   end
 end
